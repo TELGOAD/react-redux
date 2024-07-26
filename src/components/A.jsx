@@ -10,7 +10,10 @@ export default ()=>{
     const dispatch=useDispatch();
     const handleClick=(eve)=>{
         console.log("inside")
-        console.log(nameRef.current.value)
+      const  name=nameRef.current.value
+      console.log()
+
+        dispatch({type:"NAME_UPDATE",payload:name})
     }
     return <div>
         <h1>A</h1>

@@ -1,6 +1,20 @@
 import {init} from "./init"
 
-export default  appReducer=(curData=init, newData)=>{
+ export  const   appReducer=(state=init, newData)=>{
+    switch(newData.type){
+        case "NAME_UPDATE": 
+        state={
+            ...state,
+            name: newData.payload,
+        }
+        break;
 
-    return curData;
+        case "LOCATION_UPDATE":
+            state={
+                ...state,
+                location: newData.payload,
+            }
+            break;
+    } 
+    return state;
 }
